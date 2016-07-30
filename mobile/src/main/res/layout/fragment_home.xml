@@ -44,6 +44,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_accept"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/accept" />
@@ -87,7 +88,8 @@
                     style="@style/DashboardCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.3"
+                    android:clickable="true">
 
                     <TextView
                         style="@style/DashboardCardText"
@@ -103,7 +105,8 @@
                     style="@style/DashboardCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.3"
+                    android:clickable="true">
 
                     <TextView
                         style="@style/DashboardCardText"
@@ -119,7 +122,8 @@
                     style="@style/DashboardCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.3"
+                    android:clickable="true">
 
                     <TextView
                         style="@style/DashboardCardText"

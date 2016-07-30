@@ -4,6 +4,10 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <!-- Label -->
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
+
     <!-- Welcome -->
     <string name="welcome_text">Lo Thone</string>
     <string name="welcome_description">Application for Myanmar Citizen!</string>
@@ -23,6 +27,20 @@
     <string name="ministry">Ministry</string>
     <string name="area_code">Area Code</string>
     <string name="zip_code">Zip Code</string>
+
+    <!-- Personal Info -->
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="emergency_contact_one">Emergency Contact One</string>
+    <string name="emergency_contact_two">Emergency Contact Two</string>
+    <string name="emergency_contact_three">Emergency Contact Three</string>
+    <string name="emergency_message_one">Someone is trying to hurt me!</string>
+    <string name="emergency_message_two">Someone is tracking me.</string>
+    <string name="emergency_message_three">Hay, I need help. Please call me back.</string>
+    <string name="fake_name">Daw Hnin Si</string>
+    <string name="fake_address">No.404, Apache Road, Linux Country.</string>
+    <string name="fake_ph_number">09 999999999</string>
 
     <!-- Drawer Menu -->
     <string name="home">Home</string>

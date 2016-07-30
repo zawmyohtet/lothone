@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="textColorPrimary">@color/colorPrimaryText</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -33,6 +34,17 @@
     <style name="DashboardCardText">
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="PersonalInfoLabel">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="PersonalInfoEditText">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:layout_marginBottom">@dimen/object_separator_vertical</item>
+        <item name="android:textColorHint">@color/colorSecondaryText</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
