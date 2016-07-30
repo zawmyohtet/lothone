@@ -21,7 +21,7 @@
     <!-- Dashboard -->
     <string name="emergency">Emergency</string>
     <string name="police_station">Police</string>
-    <string name="fire_brigade">Fire Brigade</string>
+    <string name="fire_brigade">Fire</string>
     <string name="ambulance">Ambulance</string>
     <string name="useful_information">Useful Information</string>
     <string name="ministry">Ministry</string>

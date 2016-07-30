@@ -40,22 +40,26 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.cv_police, R.id.cv_fire_brigade, R.id.cv_ambulance, R.id.cv_ministry, R.id.cv_area, R.id.cv_zip})
-    public void handleClick(View v) {
+    @OnClick({R.id.btn_police, R.id.btn_fire_brigade, R.id.btn_ambulance, R.id.btn_ministry, R.id.btn_area_code, R.id.btn_zip_code})
+    public void handleTap(View v) {
         switch (v.getId()) {
-            case R.id.cv_police:
-                context.startActivity(new Intent(context, PersonalInfoActivity.class));
+            case R.id.btn_police:
+                Log.d(TAG, "Tap on police.");
                 break;
-            case R.id.cv_fire_brigade:
-                Log.d(TAG, "It is on click.");
+            case R.id.btn_fire_brigade:
+                Log.d(TAG, "Tap on fire brigade.");
                 break;
-            case R.id.cv_ambulance:
+            case R.id.btn_ambulance:
+                Log.d(TAG, "Tap on ambulance.");
                 break;
-            case R.id.cv_ministry:
+            case R.id.btn_area_code:
+                Log.d(TAG, "Tap on area code.");
                 break;
-            case R.id.cv_area:
+            case R.id.btn_zip_code:
+                Log.d(TAG, "Tap on zip code.");
                 break;
-            case R.id.cv_zip:
+            case R.id.btn_ministry:
+                Log.d(TAG, "Tap on ministry.");
                 break;
         }
     }

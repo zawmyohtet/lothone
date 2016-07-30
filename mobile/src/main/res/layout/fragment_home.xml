@@ -83,56 +83,47 @@
                 android:layout_marginBottom="@dimen/object_separator_vertical"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_police"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_police"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:clickable="true">
+                    android:layout_weight="0.5"
+                    android:text="@string/police_station"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/police_station" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_fire_brigade"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_fire_brigade"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:clickable="true">
+                    android:layout_weight="0.5"
+                    android:text="@string/fire_brigade"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/fire_brigade" />
+            </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:id="@+id/ll_row_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_row_one"
+                android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_ambulance"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_ambulance"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:clickable="true">
+                    android:layout_weight="0.5"
+                    android:text="@string/ambulance"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/ambulance" />
-
-                </android.support.v7.widget.CardView>
+                <Button
+                    android:id="@+id/btn_dummy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/ambulance"
+                    android:theme="@style/AppTheme.DashboardButton"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
@@ -140,64 +131,58 @@
                 android:id="@+id/txv_useful_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_row_one"
+                android:layout_below="@+id/ll_row_two"
                 android:layout_marginBottom="@dimen/object_separator_vertical"
                 android:text="@string/useful_information" />
 
             <LinearLayout
-                android:id="@+id/ll_row_two"
+                android:id="@+id/ll_row_three"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txv_useful_info"
+                android:layout_marginBottom="@dimen/object_separator_vertical"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_ministry"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_zip_code"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.5"
+                    android:text="@string/zip_code"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/ministry" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_zip"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_area_code"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.5"
+                    android:text="@string/area_code"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/zip_code" />
+            </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:id="@+id/ll_row_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_row_three"
+                android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_area"
-                    style="@style/DashboardCard"
+                <Button
+                    android:id="@+id/btn_ministry"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3">
+                    android:layout_weight="0.5"
+                    android:text="@string/ministry"
+                    android:theme="@style/AppTheme.DashboardButton" />
 
-                    <TextView
-                        style="@style/DashboardCardText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="@string/area_code" />
-
-                </android.support.v7.widget.CardView>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/ambulance"
+                    android:theme="@style/AppTheme.DashboardButton"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
