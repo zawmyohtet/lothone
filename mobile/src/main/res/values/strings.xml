@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Lothone</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Welcome -->
+    <string name="welcome_text">Lo Thone</string>
+    <string name="welcome_description">Application for Myanmar Citizen!</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="emergency">Emergency</string>
+    <string name="police_station">Police</string>
+    <string name="fire_brigade">Fire Brigade</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="useful_information">Useful Information</string>
+    <string name="ministry">Ministry</string>
+    <string name="area_code">Area Code</string>
+    <string name="zip_code">Zip Code</string>
+
+    <!-- Drawer Menu -->
+    <string name="home">Home</string>
+    <string name="emergency_info">Emergency Info</string>
+    <string name="how_to">How to</string>
+    <string name="extra">Extra</string>
+    <string name="credit">Credit</string>
+    <string name="share">Share</string>
+    <string name="about">What is this?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

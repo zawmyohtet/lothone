@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lothone</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+
+    <!-- Welcome -->
+    <string name="welcome_text">Lo Thone</string>
+    <string name="welcome_description">App for all!</string>
+</resources>
