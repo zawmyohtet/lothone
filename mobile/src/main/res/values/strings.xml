@@ -9,11 +9,12 @@
     <string name="label_no">No</string>
     <string name="label_add">Add</string>
     <string name="label_edit">Edit</string>
+    <string name="label_na">NA</string>
 
     <!-- Welcome -->
     <string name="welcome_text">Lo Thone</string>
     <string name="welcome_description">Application for Myanmar Citizen!</string>
-    <string name="title_activity_home">Home</string>
+    <string name="title_activity_home">Lo Thone</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -46,6 +47,13 @@
     <string name="fake_name">Daw Hnin Si</string>
     <string name="fake_address">No.404, Apache Road, Linux Country.</string>
     <string name="fake_ph_number">09 999999999</string>
+
+    <!-- About Us -->
+    <string name="crafted_with_love">Crafted with love by Zaw Myo Htet!</string>
+    <string name="about_us_text_one">This project is my side project that I used to spend my leisure time with. If it can help someone in some way, it will make me happy.</string>
+    <string name="about_us_text_two">Feedback and suggestions are welcome!</string>
+    <string name="about_us_text_three">Thanks!</string>
+
 
     <!-- Drawer Menu -->
     <string name="home">Home</string>

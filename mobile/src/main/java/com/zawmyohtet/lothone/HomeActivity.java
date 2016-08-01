@@ -98,33 +98,36 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.nav_home:
-                fragment = getFragmentManager().findFragmentByTag(HomeFragment.TAG);
-                if (fragment == null) {
-                    fragment = new HomeFragment();
-                }
-                getFragmentManager().beginTransaction().replace(R.id.container, fragment, HomeFragment.TAG).commit();
+                changeFragment(new HomeFragment(), HomeFragment.TAG);
                 break;
             case R.id.nav_emergency:
+                changeFragment(new PersonalInfoFragment(), PersonalInfoFragment.TAG);
                 break;
             case R.id.nav_how_to:
+                changeFragment(new UserGuideFragment(), PersonalInfoFragment.TAG);
                 break;
             case R.id.nav_credit:
-                fragment = getFragmentManager().findFragmentByTag(CreditFragment.TAG);
-                if (fragment == null) {
-                    fragment = new CreditFragment();
-                }
-                getFragmentManager().beginTransaction().replace(R.id.container, fragment, CreditFragment.TAG).commit();
+                changeFragment(new CreditFragment(), CreditFragment.TAG);
                 break;
             case R.id.nav_share:
                 break;
             case R.id.nav_about:
+                changeFragment(new AboutUsFragment(), AboutUsFragment.TAG);
                 break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void changeFragment(Fragment fragment, String tag) {
+        this.fragment = getFragmentManager().findFragmentByTag(tag);
+        if (fragment == null) {
+            this.fragment = fragment;
+        }
+        getFragmentManager().beginTransaction().replace(R.id.container, fragment, tag).commit();
     }
 }
