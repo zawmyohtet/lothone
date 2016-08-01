@@ -7,6 +7,7 @@
     <!-- Label -->
     <string name="label_yes">Yes</string>
     <string name="label_no">No</string>
+    <string name="label_edit">Edit</string>
 
     <!-- Welcome -->
     <string name="welcome_text">Lo Thone</string>

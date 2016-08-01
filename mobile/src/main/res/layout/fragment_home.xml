@@ -16,47 +16,97 @@
         android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_horizontal_margin">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rl_info_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/txv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name" />
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/name"
+                android:layout_marginBottom="@dimen/object_separator_vertical"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/ll_info_row_one"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_below="@+id/txv_name"
+                android:layout_marginBottom="@dimen/object_separator_vertical">
 
-                <Button
-                    android:id="@+id/btn_accept"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/accept" />
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency_contact"/>
 
-                <Button
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/cast_tracks_chooser_dialog_cancel" />
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency"/>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_info_row_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_info_row_one"
+                android:layout_marginBottom="@dimen/object_separator_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency_contact"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_info_row_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_info_row_two"
+                android:layout_marginBottom="@dimen/object_separator_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency_contact"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/emergency"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_info_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_info_row_three"
+                android:text="@string/label_edit"
+                android:theme="@style/AppTheme.DashboardButton"/>
+
+        </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 
@@ -106,6 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ll_row_one"
+                android:layout_marginBottom="@dimen/object_separator_vertical"
                 android:orientation="horizontal">
 
                 <Button
