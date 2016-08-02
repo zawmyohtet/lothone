@@ -54,6 +54,11 @@
     <string name="about_us_text_two">Feedback and suggestions are welcome!</string>
     <string name="about_us_text_three">Thanks!</string>
 
+    <!-- Credit -->
+    <string name="lo_tone_use">This application uses following third party android libraries.</string>
+    <string name="resource_link">Resource Credit</string>
+    <string name="artwork_credit">Artwork Credit</string>
+
 
     <!-- Drawer Menu -->
     <string name="home">Home</string>
