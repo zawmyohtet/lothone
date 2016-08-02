@@ -6,7 +6,6 @@
     android:layout_marginLeft="@dimen/activity_vertical_margin"
     android:layout_marginRight="@dimen/activity_vertical_margin"
     android:layout_marginTop="?android:attr/actionBarSize"
-    android:orientation="vertical"
     tools:context="com.zawmyohtet.lothone.CreditFragment">
 
     <LinearLayout

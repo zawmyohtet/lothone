@@ -24,7 +24,14 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PersonalInfoActivity"></activity>
+        <activity android:name=".PersonalInfoActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
     </application>
 
 </manifest>
