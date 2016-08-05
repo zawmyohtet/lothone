@@ -9,8 +9,8 @@ public class User {
 
     private int id;
     private String name;
-    private String gender;
-    private String bloodType;
+    private int gender;
+    private int bloodType;
     private String address;
     private String emergencyNumberOne;
     private String emergencyNumberTwo;
@@ -34,19 +34,19 @@ public class User {
         this.name = name;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
-    public String getBloodType() {
+    public int getBloodType() {
         return bloodType;
     }
 
-    public void setBloodType(String bloodType) {
+    public void setBloodType(int bloodType) {
         this.bloodType = bloodType;
     }
 

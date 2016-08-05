@@ -60,8 +60,8 @@ public class PersonalInfoFragment extends Fragment {
         if (context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).getBoolean("setup_profile", false)) {
             User user = Credential.getInstance(context).getActiveUser();
             txvName.setText(user.getName());
-            txvGender.setText(user.getGender());
-            txvBloodType.setText(user.getBloodType());
+            txvGender.setText(getResources().getStringArray(R.array.gender)[user.getGender()]);
+            txvBloodType.setText(getResources().getStringArray(R.array.blood_type)[user.getBloodType()]);
             txvAddress.setText(user.getAddress());
             txvEmergencyOne.setText(user.getEmergencyNumberOne());
             txvEmergencyTwo.setText(user.getEmergencyNumberTwo());

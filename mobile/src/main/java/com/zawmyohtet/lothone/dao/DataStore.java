@@ -33,8 +33,8 @@ public class DataStore extends SQLiteOpenHelper {
     private static final String CREATE_USER_TABLE = "CREATE TABLE " + TB_USER + " (" +
             U_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             U_NAME + " TEXT NULL, " +
-            U_GENDER + " TEXT NULL, " +
-            U_BLOOD_TYPE + " TEXT NULL, " +
+            U_GENDER + " INTEGER NULL, " +
+            U_BLOOD_TYPE + " INTEGER NULL, " +
             U_ADDRESS + " TEXT NULL, " +
             U_EMERGENCY_ONE + " TEXT NULL, " +
             U_EMERGENCY_TWO + " TEXT NULL, " +

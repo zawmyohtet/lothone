@@ -17,6 +17,8 @@ import com.zawmyohtet.lothone.dao.UserStore;
 import com.zawmyohtet.lothone.model.User;
 import com.zawmyohtet.lothone.utility.Credential;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -49,9 +51,15 @@ public class PersonalInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_personal_info);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ButterKnife.bind(this);
+
         context = this;
 
         ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(context,
@@ -72,10 +80,13 @@ public class PersonalInfoActivity extends AppCompatActivity {
             User user = Credential.getInstance(context).getActiveUser();
             edtName.setText(user.getName());
             edtAddress.setText(user.getAddress());
+
+            spGender.setSelection(user.getGender());
+            spBloodType.setSelection(user.getBloodType());
+
             edtEContactOne.setText(user.getEmergencyNumberOne());
             edtEContactTwo.setText(user.getEmergencyNumberTwo());
             edtEContactThree.setText(user.getEmergencyNumberThree());
-
             btnSubmit.setVisibility(View.GONE);
             btnUpdate.setVisibility(View.VISIBLE);
 
@@ -111,8 +122,8 @@ public class PersonalInfoActivity extends AppCompatActivity {
             status = true;
         }
 
-        user.setGender(spGender.getSelectedItem().toString());
-        user.setBloodType(spBloodType.getSelectedItem().toString());
+        user.setGender(spGender.getSelectedItemPosition());
+        user.setBloodType(spBloodType.getSelectedItemPosition());
 
         if (!edtAddress.getText().toString().isEmpty()) {
             user.setAddress(edtAddress.getText().toString());

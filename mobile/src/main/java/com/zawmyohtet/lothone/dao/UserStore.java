@@ -93,8 +93,8 @@ public class UserStore {
                     do {
                         user.setId(cursor.getInt(0));
                         user.setName(cursor.getString(1));
-                        user.setGender(cursor.getString(2));
-                        user.setBloodType(cursor.getString(3));
+                        user.setGender(cursor.getInt(2));
+                        user.setBloodType(cursor.getInt(3));
                         user.setAddress(cursor.getString(4));
                         user.setEmergencyNumberOne(cursor.getString(5));
                         user.setEmergencyNumberTwo(cursor.getString(6));
