@@ -27,30 +27,32 @@
                 android:id="@+id/txv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/colorPrimaryText"
+                android:layout_marginBottom="@dimen/object_separator_vertical"
                 android:text="@string/name"
-                android:layout_marginBottom="@dimen/object_separator_vertical"/>
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/ll_info_row_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_below="@+id/txv_name"
-                android:layout_marginBottom="@dimen/object_separator_vertical">
+                android:layout_marginBottom="@dimen/object_separator_vertical"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency_contact"/>
+                    android:text="@string/emergency_contact" />
 
                 <TextView
+                    android:id="@+id/txv_emergency_one"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency"/>
+                    android:text="@string/label_na"
+                    android:textColor="@color/colorPrimaryText" />
 
             </LinearLayout>
 
@@ -66,13 +68,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency_contact"/>
+                    android:text="@string/emergency_contact" />
 
                 <TextView
+                    android:id="@+id/txv_emergency_two"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency"/>
+                    android:text="@string/label_na"
+                    android:textColor="@color/colorPrimaryText" />
 
             </LinearLayout>
 
@@ -88,13 +92,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency_contact"/>
+                    android:text="@string/emergency_contact" />
 
                 <TextView
+                    android:id="@+id/txv_emergency_three"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="@string/emergency"/>
+                    android:text="@string/label_na"
+                    android:textColor="@color/colorPrimaryText" />
 
             </LinearLayout>
 
@@ -104,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ll_info_row_three"
                 android:text="@string/label_edit"
-                android:theme="@style/AppTheme.DashboardButton"/>
+                android:theme="@style/AppTheme.DashboardButton" />
 
         </RelativeLayout>
 

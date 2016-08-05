@@ -7,9 +7,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.zawmyohtet.lothone.model.User;
+import com.zawmyohtet.lothone.utility.Credential;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +23,15 @@ import butterknife.OnClick;
 public class HomeFragment extends Fragment {
 
     public static final String TAG = "HomeFragment";
+
+    @BindView(R.id.txv_name)
+    TextView txvName;
+    @BindView(R.id.txv_emergency_one)
+    TextView txvEmergencyOne;
+    @BindView(R.id.txv_emergency_two)
+    TextView txvEmergencyTwo;
+    @BindView(R.id.txv_emergency_three)
+    TextView txvEmergencyThree;
 
     private Context context;
 
@@ -37,12 +51,26 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
         context = getActivity();
+        showUserInfo();
         return view;
     }
 
-    @OnClick({R.id.btn_police, R.id.btn_fire_brigade, R.id.btn_ambulance, R.id.btn_ministry, R.id.btn_area_code, R.id.btn_zip_code})
+    private void showUserInfo() {
+        if (context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).getBoolean("setup_profile", false)) {
+            User user = Credential.getInstance(context).getActiveUser();
+            txvName.setText(user.getName());
+            txvEmergencyOne.setText(user.getEmergencyNumberOne());
+            txvEmergencyTwo.setText(user.getEmergencyNumberTwo());
+            txvEmergencyThree.setText(user.getEmergencyNumberThree());
+        }
+    }
+
+    @OnClick({R.id.btn_info_edit, R.id.btn_police, R.id.btn_fire_brigade, R.id.btn_ambulance, R.id.btn_ministry, R.id.btn_area_code, R.id.btn_zip_code})
     public void handleTap(View v) {
         switch (v.getId()) {
+            case R.id.btn_info_edit:
+                startActivity(new Intent(context, PersonalInfoActivity.class));
+                break;
             case R.id.btn_police:
                 Log.d(TAG, "Tap on police.");
                 break;

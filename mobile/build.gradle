@@ -38,7 +38,7 @@ dependencies {
     compile 'com.wang.avi:library:1.0.5'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha5'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:support-vector-drawable:24.1.1'
     testCompile 'junit:junit:4.12'

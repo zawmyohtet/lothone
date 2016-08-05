@@ -13,7 +13,7 @@ public class DataStore extends SQLiteOpenHelper {
     private static final String DB_NAME = "lo_thone";
     private static final int DB_VERSION = 1;
 
-    // User Table
+    // Credential Table
     public static final String TB_USER = "user";
     public static final String U_ID = "id";
     public static final String U_NAME = "name";
@@ -31,14 +31,14 @@ public class DataStore extends SQLiteOpenHelper {
     }
 
     private static final String CREATE_USER_TABLE = "CREATE TABLE " + TB_USER + " (" +
-            U_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            U_NAME + "TEXT NULL, " +
-            U_GENDER + "TEXT NULL, " +
-            U_BLOOD_TYPE + "TEXT NULL, " +
-            U_ADDRESS + "TEXT NULL, " +
-            U_EMERGENCY_ONE + "TEXT NULL, " +
-            U_EMERGENCY_TWO + "TEXT NULL, " +
-            U_EMERGENCY_THREE + "TEXT NULL, " +
+            U_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            U_NAME + " TEXT NULL, " +
+            U_GENDER + " TEXT NULL, " +
+            U_BLOOD_TYPE + " TEXT NULL, " +
+            U_ADDRESS + " TEXT NULL, " +
+            U_EMERGENCY_ONE + " TEXT NULL, " +
+            U_EMERGENCY_TWO + " TEXT NULL, " +
+            U_EMERGENCY_THREE + " TEXT NULL, " +
             U_CREATED_AT + " datetime NULL, " +
             U_UPDATED_AT + " datetime NULL);";
 

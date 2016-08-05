@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 
 import com.zawmyohtet.lothone.model.User;
 
@@ -50,18 +51,24 @@ public class UserStore {
 
         Date date = new Date();
         ContentValues values = new ContentValues();
+        values.put(DataStore.U_ID, 1);
         values.put(DataStore.U_NAME, user.getName());
         values.put(DataStore.U_GENDER, user.getGender());
         values.put(DataStore.U_BLOOD_TYPE, user.getBloodType());
+        values.put(DataStore.U_ADDRESS, user.getAddress());
         values.put(DataStore.U_EMERGENCY_ONE, user.getEmergencyNumberOne());
         values.put(DataStore.U_EMERGENCY_TWO, user.getEmergencyNumberTwo());
         values.put(DataStore.U_EMERGENCY_THREE, user.getEmergencyNumberThree());
-        values.put(DataStore.U_CREATED_AT, dateFormat.format(date));
+
+        if (user.getCreatedAt() == null){
+            values.put(DataStore.U_CREATED_AT, dateFormat.format(date));
+        }
+
         values.put(DataStore.U_UPDATED_AT, dateFormat.format(date));
 
         try {
 
-            database.replace(DataStore.TB_USER, DataStore.U_ID + "=" + 1, values);
+            id = database.replace(DataStore.TB_USER, DataStore.U_ID + "=" + 1, values);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,7 +79,7 @@ public class UserStore {
 
     /**
      * Public method to fetch user data
-     * @return User
+     * @return Credential
      */
     public User pull() {
         User user = new User();

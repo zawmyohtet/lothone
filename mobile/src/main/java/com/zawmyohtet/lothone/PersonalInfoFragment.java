@@ -5,10 +5,14 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.zawmyohtet.lothone.model.User;
+import com.zawmyohtet.lothone.utility.Credential;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,7 +52,21 @@ public class PersonalInfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
         ButterKnife.bind(this, view);
         context = getActivity();
+        showUserInfo();
         return view;
+    }
+
+    private void showUserInfo() {
+        if (context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).getBoolean("setup_profile", false)) {
+            User user = Credential.getInstance(context).getActiveUser();
+            txvName.setText(user.getName());
+            txvGender.setText(user.getGender());
+            txvBloodType.setText(user.getBloodType());
+            txvAddress.setText(user.getAddress());
+            txvEmergencyOne.setText(user.getEmergencyNumberOne());
+            txvEmergencyTwo.setText(user.getEmergencyNumberTwo());
+            txvEmergencyThree.setText(user.getEmergencyNumberThree());
+        }
     }
 
     @OnClick(R.id.btn_info_edit)
