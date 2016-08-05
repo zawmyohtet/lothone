@@ -52,7 +52,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/label_na" />
+                        android:text="@string/label_na"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
@@ -75,7 +76,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/label_na" />
+                        android:text="@string/label_na"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
@@ -98,7 +100,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/fake_address" />
+                        android:text="@string/fake_address"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
@@ -136,7 +139,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/label_na" />
+                        android:text="@string/label_na"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
@@ -159,7 +163,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/label_na" />
+                        android:text="@string/label_na"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
@@ -182,7 +187,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:text="@string/label_na" />
+                        android:text="@string/label_na"
+                        android:textColor="@color/colorPrimaryText" />
 
                 </LinearLayout>
 
