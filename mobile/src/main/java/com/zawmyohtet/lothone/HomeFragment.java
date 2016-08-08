@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment {
                 break;
             case R.id.btn_police:
                 Log.d(TAG, "Tap on police.");
+                startActivity(new Intent(context, EmergencyContactActivity.class));
                 break;
             case R.id.btn_fire_brigade:
                 Log.d(TAG, "Tap on fire brigade.");
