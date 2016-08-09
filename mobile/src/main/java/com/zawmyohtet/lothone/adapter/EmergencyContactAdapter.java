@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zawmyohtet.lothone.R;
+import com.zawmyohtet.lothone.action.EmergencyContactListInterface;
 import com.zawmyohtet.lothone.model.EmergencyContact;
 
 import java.util.List;
@@ -21,11 +22,12 @@ import butterknife.ButterKnife;
  * @since 8/8/16
  */
 
-public class EmergencyContactAdapter extends RecyclerView.Adapter<EmergencyContactAdapter.ViewHolder> {
+public class EmergencyContactAdapter extends RecyclerView.Adapter<EmergencyContactAdapter.ViewHolder>{
 
     private static final String TAG = "EmergencyContactAdapter";
 
     private List<EmergencyContact> emergencyContactList;
+    private EmergencyContactListInterface eInterface;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -38,16 +40,15 @@ public class EmergencyContactAdapter extends RecyclerView.Adapter<EmergencyConta
         @BindView(R.id.iv_call)
         ImageButton ivCall;
 
-
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
-
         }
     }
 
-    public EmergencyContactAdapter(List<EmergencyContact> emergencyContactList) {
+    public EmergencyContactAdapter(List<EmergencyContact> emergencyContactList, EmergencyContactListInterface eInterface) {
         this.emergencyContactList = emergencyContactList;
+        this.eInterface = eInterface;
     }
 
     @Override
@@ -59,10 +60,17 @@ public class EmergencyContactAdapter extends RecyclerView.Adapter<EmergencyConta
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.txvEmergencyName.setText(emergencyContactList.get(position).getName());
         holder.txvEmergencyNumber.setText(emergencyContactList.get(position).getContactNumber());
         holder.txvEmergencyAddress.setText(emergencyContactList.get(position).getAddress());
+
+        holder.ivCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eInterface.onCall(emergencyContactList.get(holder.getAdapterPosition()).getContactNumber());
+            }
+        });
     }
 
     @Override

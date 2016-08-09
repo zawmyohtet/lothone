@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.zawmyohtet.lothone.action.EmergencyContactListInterface;
 import com.zawmyohtet.lothone.adapter.EmergencyContactAdapter;
 import com.zawmyohtet.lothone.model.EmergencyContact;
 import com.zawmyohtet.lothone.utility.Divider;
@@ -21,9 +23,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EmergencyContactActivity extends AppCompatActivity {
+public class EmergencyContactActivity extends AppCompatActivity implements EmergencyContactListInterface{
 
-    private static final String TAG = "EmergencyContactActivity";
+    private static final String TAG = "ECActivity";
     public static final String FILTER = "filter";
 
     @BindView(R.id.rcv_emergency)
@@ -49,7 +51,7 @@ public class EmergencyContactActivity extends AppCompatActivity {
         context = this;
         ButterKnife.bind(this);
 
-        emergencyContactAdapter = new EmergencyContactAdapter(emergencyContactList);
+        emergencyContactAdapter = new EmergencyContactAdapter(emergencyContactList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         rcvEmergency.setLayoutManager(layoutManager);
         rcvEmergency.setItemAnimator(new DefaultItemAnimator());
@@ -60,7 +62,7 @@ public class EmergencyContactActivity extends AppCompatActivity {
     }
 
     private List<EmergencyContact> prepareDummy(){
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 200; i++){
             emergencyContactList.add(new EmergencyContact(i, getString(R.string.fake_name), getString(R.string.fake_ph_number), getString(R.string.fake_address), getString(R.string.police_station)));
         }
 
@@ -91,6 +93,16 @@ public class EmergencyContactActivity extends AppCompatActivity {
 
             progressDialog.dismiss();
         }
+    }
+
+    @Override
+    public void onCall(String number) {
+        Log.d(TAG, "On Call -> " + number);
+    }
+
+    @Override
+    public void onCallReady(String number) {
+
     }
 }
 
