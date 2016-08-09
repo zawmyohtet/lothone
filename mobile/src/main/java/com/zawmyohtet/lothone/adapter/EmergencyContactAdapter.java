@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class EmergencyContactAdapter extends RecyclerView.Adapter<EmergencyConta
         @BindView(R.id.txv_emergency_address)
         TextView txvEmergencyAddress;
         @BindView(R.id.iv_call)
-        ImageView ivCall;
+        ImageButton ivCall;
 
 
         public ViewHolder(View view) {

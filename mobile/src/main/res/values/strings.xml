@@ -11,6 +11,7 @@
     <string name="label_edit">Edit</string>
     <string name="label_update">Update</string>
     <string name="label_na">NA</string>
+    <string name="label_work_in_progress">Work In Progress ...</string>
 
     <!-- Welcome -->
     <string name="welcome_text">Lo Thone</string>

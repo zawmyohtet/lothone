@@ -39,10 +39,11 @@
 
     </RelativeLayout>
 
-    <ImageView
+    <ImageButton
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:id="@+id/iv_call"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:contentDescription="@string/accept"
         android:paddingLeft="@dimen/object_separator_horizontal"
