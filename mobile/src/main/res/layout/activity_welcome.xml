@@ -26,12 +26,27 @@
             android:id="@+id/txv_welcome_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_welcome"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center_horizontal"
             android:keepScreenOn="true"
             android:text="@string/welcome_description"
-            android:textColor="#33b5e5"
-            android:layout_below="@+id/txv_welcome"/>
+            android:textColor="#33b5e5" />
+
+        <mm.technomation.mmtext.MMTextView
+            android:id="@+id/txv_welcome_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_welcome_description"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:keepScreenOn="true"
+            android:text="@string/not_get_required_permission"
+            android:textColor="@color/red"
+            android:visibility="gone" />
 
     </RelativeLayout>
 

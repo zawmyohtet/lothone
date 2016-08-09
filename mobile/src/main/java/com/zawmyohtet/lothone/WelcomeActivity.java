@@ -1,19 +1,38 @@
 package com.zawmyohtet.lothone;
 
+import android.*;
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.mukesh.permissions.AppPermissions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import mm.technomation.mmtext.MMTextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class WelcomeActivity extends AppCompatActivity {
+
+    private static final String TAG = "WelcomeActivity";
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -84,6 +103,19 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     };
 
+    private static final String[] ALL_PERMISSIONS = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.SEND_SMS
+    };
+
+    private static final int ALL_REQUEST_CODE = 0;
+
+    private AppPermissions mRuntimePermission;
+
+    @BindView(R.id.txv_welcome_warning)
+    MMTextView txvWelcomeWarning;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +139,8 @@ public class WelcomeActivity extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
 //        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-
+        ButterKnife.bind(this);
+        mRuntimePermission = new AppPermissions(this);
         showWelcome();
     }
 
@@ -165,18 +198,39 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void showWelcome() {
-        Thread timer = new Thread() {
-            public void run() {
-                try {
-                    sleep(AUTO_HIDE_DELAY_MILLIS);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    finish();
-                    startActivity(new Intent(WelcomeActivity.this, HomeActivity.class));
+        if (mRuntimePermission.hasPermission(ALL_PERMISSIONS)) {
+            changeActivity();
+        } else {
+            mRuntimePermission.requestPermission(ALL_PERMISSIONS, ALL_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case ALL_REQUEST_CODE:
+                List<Integer> permissionResults = new ArrayList<>();
+                for (int grantResult : grantResults) {
+                    permissionResults.add(grantResult);
                 }
-            }
-        };
-        timer.start();
+                if (permissionResults.contains(PackageManager.PERMISSION_DENIED)) {
+                    txvWelcomeWarning.setVisibility(View.VISIBLE);
+                } else {
+                    changeActivity();
+                }
+                break;
+        }
+    }
+
+    private void changeActivity(){
+        finish();
+        startActivity(new Intent(WelcomeActivity.this, HomeActivity.class));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "Arrived to onResume!");
     }
 }

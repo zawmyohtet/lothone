@@ -17,6 +17,7 @@
     <string name="welcome_text">Lo Thone</string>
     <string name="welcome_description">Application for Myanmar Citizen!</string>
     <string name="title_activity_home">Lo Thone</string>
+    <string name="not_get_required_permission">Application did not get required permission to continue ...</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -60,7 +61,6 @@
     <string name="lo_tone_use">This application uses following third party android libraries.</string>
     <string name="resource_link">Resource Credit</string>
     <string name="artwork_credit">Artwork Credit</string>
-
 
     <!-- Drawer Menu -->
     <string name="home">Home</string>
