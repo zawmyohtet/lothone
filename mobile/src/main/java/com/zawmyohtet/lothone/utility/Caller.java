@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 
 /**
  * @author zawmyohtet
@@ -19,6 +20,7 @@ public class Caller {
 
     /**
      * It will try to make call depend on preference
+     *
      * @param context
      * @param number
      */
@@ -31,11 +33,11 @@ public class Caller {
         } else {
             this.prepare(context, number);
         }
-
     }
 
     /**
      * Direct call
+     *
      * @param context
      * @param number
      */
@@ -51,6 +53,7 @@ public class Caller {
 
     /**
      * Prepare call
+     *
      * @param context
      * @param number
      */
@@ -58,5 +61,23 @@ public class Caller {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + number));
         context.startActivity(intent);
+    }
+
+    /**
+     * Credit: http://www.journaldev.com/641/regular-expression-phone-number-validation-in-java
+     * @param number
+     * @return
+     */
+    public boolean checkNumber(String number) {
+        //validate phone numbers of format "1234567890"
+        if (number.matches("\\d{10}")) return true;
+            //validating phone number with -, . or spaces
+        else if (number.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}")) return true;
+            //validating phone number with extension length from 3 to 5
+        else if (number.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}")) return true;
+            //validating phone number where area code is in braces ()
+        else if (number.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) return true;
+            //return false if nothing matches the input
+        else return false;
     }
 }
