@@ -9,5 +9,4 @@ public interface EmergencyContactListInterface {
 
     public void onCall(String number);
 
-    public void onCallReady(String number);
 }

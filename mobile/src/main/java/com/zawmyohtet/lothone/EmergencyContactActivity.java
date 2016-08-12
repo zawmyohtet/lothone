@@ -14,6 +14,7 @@ import android.util.Log;
 import com.zawmyohtet.lothone.action.EmergencyContactListInterface;
 import com.zawmyohtet.lothone.adapter.EmergencyContactAdapter;
 import com.zawmyohtet.lothone.model.EmergencyContact;
+import com.zawmyohtet.lothone.utility.Caller;
 import com.zawmyohtet.lothone.utility.Divider;
 import com.zawmyohtet.lothone.utility.ProgressDialog;
 
@@ -97,12 +98,7 @@ public class EmergencyContactActivity extends AppCompatActivity implements Emerg
 
     @Override
     public void onCall(String number) {
-        Log.d(TAG, "On Call -> " + number);
-    }
-
-    @Override
-    public void onCallReady(String number) {
-
+        new Caller().make(context, number);
     }
 }
 

@@ -77,8 +77,22 @@
 
     <!-- Strings related to Settings -->
 
-    <!-- Example General settings -->
+    <!-- General settings -->
     <string name="pref_header_general">General</string>
+    <string name="pref_direct_call_title">Make Direct Call</string>
+    <string name="pref_direct_call_description">Make a direct call when tap every call action.</string>
+    <string name="pref_assign_emergency_call_button">Assign Emergency Button</string>
+    <string-array name="pref_emergency_call_button_title">
+        <item>Call to 199</item>
+        <item>Call to 911</item>
+        <item>Call to 101</item>
+    </string-array>
+    <string-array name="pref_emergency_call_button_value">
+        <item>199</item>
+        <item>911</item>
+        <item>101</item>
+    </string-array>
+
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
