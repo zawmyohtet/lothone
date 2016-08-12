@@ -93,7 +93,52 @@
         <item>101</item>
     </string-array>
 
+    <!-- Emergency Settings -->
+    <string name="pref_emergency">Emergency Setting</string>
+    <string name="pref_listen_state">Enter Emergency State</string>
+    <string-array name="pref_listen_state_title">
+        <item>When screen off</item>
+        <item>When Screen On</item>
+        <item>On Both</item>
+    </string-array>
+    <string-array name="pref_listen_state_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
+    <string name="pref_start_action">Active Emergency State After</string>
+    <string-array name="pref_start_action_title">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="pref_start_action_value">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="pref_emergency_state_duration">Active Emergency State For</string>
+    <string-array name="pref_emergency_state_duration_title">
+        <item>10s</item>
+        <item>15s</item>
+        <item>20s</item>
+    </string-array>
+    <string-array name="pref_emergency_state_duration_value">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+
+
+    <!-- Default Pref -->
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history

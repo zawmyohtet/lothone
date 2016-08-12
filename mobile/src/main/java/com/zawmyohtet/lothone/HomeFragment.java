@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Display;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zawmyohtet.lothone.model.User;
+import com.zawmyohtet.lothone.services.LothoneService;
 import com.zawmyohtet.lothone.utility.Credential;
 
 import butterknife.BindView;
@@ -77,9 +79,16 @@ public class HomeFragment extends Fragment {
                 break;
             case R.id.btn_fire_brigade:
                 Log.d(TAG, "Tap on fire brigade.");
+                context.startService(new Intent(context, LothoneService.class));
                 break;
             case R.id.btn_ambulance:
                 Log.d(TAG, "Tap on ambulance.");
+                Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+                if(vibrator.hasVibrator()){
+                    vibrator.vibrate(500);
+                } else {
+                    Log.d(TAG, "No Vibrator");
+                }
                 break;
             case R.id.btn_area_code:
                 Log.d(TAG, "Tap on area code.");

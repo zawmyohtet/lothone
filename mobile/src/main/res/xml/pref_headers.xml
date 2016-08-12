@@ -7,6 +7,12 @@
         android:icon="@drawable/ic_info_black_24dp"
         android:title="@string/pref_header_general" />
 
+    <header
+    android:fragment="com.zawmyohtet.lothone.SettingsActivity$EmergencyPreferenceFragment"
+    android:icon="@drawable/ic_sync_black_24dp"
+    android:title="@string/pref_emergency" />
+
+
     <!--<header-->
         <!--android:fragment="com.zawmyohtet.lothone.SettingsActivity$NotificationPreferenceFragment"-->
         <!--android:icon="@drawable/ic_notifications_black_24dp"-->

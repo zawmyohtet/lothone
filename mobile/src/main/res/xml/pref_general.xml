@@ -6,9 +6,6 @@
         android:summary="@string/pref_direct_call_description"
         android:title="@string/pref_direct_call_title" />
 
-    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
-         dismiss it. -->
-    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
     <ListPreference
         android:defaultValue="199"
         android:entries="@array/pref_emergency_call_button_title"

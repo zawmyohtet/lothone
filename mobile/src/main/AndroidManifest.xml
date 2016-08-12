@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zawmyohtet.lothone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".LoThone"
@@ -49,6 +50,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
+
+        <!-- <receiver android:name=".receiver.ScreenOnOffReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.SCREEN_OFF" /> -->
+        <!-- <action android:name="android.intent.action.SCREEN_ON" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <service
+            android:name=".services.LothoneService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.EmergencyService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
