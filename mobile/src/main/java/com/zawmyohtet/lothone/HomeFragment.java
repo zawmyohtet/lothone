@@ -85,7 +85,8 @@ public class HomeFragment extends Fragment {
                 Log.d(TAG, "Tap on ambulance.");
                 Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator.hasVibrator()){
-                    vibrator.vibrate(500);
+                    long[] pattern = {0, 300, 100, 300};
+                    vibrator.vibrate(pattern, -1);
                 } else {
                     Log.d(TAG, "No Vibrator");
                 }
