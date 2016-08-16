@@ -11,15 +11,6 @@
         android:title="@string/pref_listen_state" />
 
     <ListPreference
-        android:defaultValue="5"
-        android:entries="@array/pref_start_action_title"
-        android:entryValues="@array/pref_start_action_value"
-        android:key="start_action"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="@string/pref_start_action" />
-
-    <ListPreference
         android:defaultValue="10s"
         android:entries="@array/pref_emergency_state_duration_title"
         android:entryValues="@array/pref_emergency_state_duration_value"
@@ -27,5 +18,14 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/pref_emergency_state_duration" />
+
+    <ListPreference
+        android:defaultValue="5"
+        android:entries="@array/pref_start_action_title"
+        android:entryValues="@array/pref_start_action_value"
+        android:key="start_action"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_start_action" />
 
 </PreferenceScreen>

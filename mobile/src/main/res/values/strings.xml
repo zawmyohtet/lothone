@@ -107,7 +107,7 @@
         <item>2</item>
     </string-array>
 
-    <string name="pref_start_action">Active Emergency State After</string>
+    <string name="pref_start_action">Send Emergency SMS After</string>
     <string-array name="pref_start_action_title">
         <item>5</item>
         <item>6</item>
