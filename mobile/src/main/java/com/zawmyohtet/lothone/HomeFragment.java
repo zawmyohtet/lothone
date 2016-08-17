@@ -1,6 +1,7 @@
 package com.zawmyohtet.lothone;
 
 import android.app.Fragment;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,9 +15,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.zawmyohtet.lothone.dao.EmergencyContactStore;
 import com.zawmyohtet.lothone.model.User;
 import com.zawmyohtet.lothone.services.LothoneService;
 import com.zawmyohtet.lothone.utility.Credential;
+import com.zawmyohtet.lothone.utility.Helper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -93,6 +99,7 @@ public class HomeFragment extends Fragment {
                 break;
             case R.id.btn_area_code:
                 Log.d(TAG, "Tap on area code.");
+                testConverter();
                 break;
             case R.id.btn_zip_code:
                 Log.d(TAG, "Tap on zip code.");
@@ -100,6 +107,36 @@ public class HomeFragment extends Fragment {
             case R.id.btn_ministry:
                 Log.d(TAG, "Tap on ministry.");
                 break;
+        }
+    }
+
+    private void testConverter() {
+        Log.d(TAG, "Hello from test converter");
+
+        ContentValues contentValues = null;
+        JSONObject jsonObject = new JSONObject();
+        try {
+
+            for (int i = 0; i < 100; i++) {
+
+                jsonObject.put("id", i);
+                jsonObject.put("name", "Hello!");
+                jsonObject.put("address", "address");
+                jsonObject.put("township", "Township");
+                jsonObject.put("city", "City");
+                jsonObject.put("contact", "contact");
+                jsonObject.put("latitude", "00000");
+                jsonObject.put("longitude", "08088");
+
+                contentValues = Helper.convertToContentValues(jsonObject);
+
+                EmergencyContactStore eStore = new EmergencyContactStore(context);
+                eStore.push(EmergencyContactStore.TYPE_POLICE_STATION, contentValues);
+
+            }
+
+        } catch (JSONException | IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
 

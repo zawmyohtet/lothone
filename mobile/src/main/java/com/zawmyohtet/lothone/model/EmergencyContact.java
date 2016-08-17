@@ -10,17 +10,21 @@ public class EmergencyContact {
     private static final String TAG = "EmergencyContact";
 
     private int id;
-    private String name, contactNumber, address, type;
+    private String name, contactNumber, address, type, township, city, latitude, longitude;
 
-    public EmergencyContact(){
+    public EmergencyContact() {
 
     }
 
-    public EmergencyContact(int id, String name, String contactNumber, String address, String type){
+    public EmergencyContact(int id, String name, String address, String township, String city, String contactNumber, String latitude, String longitude, String type) {
         this.id = id;
         this.name = name;
-        this.contactNumber = contactNumber;
         this.address = address;
+        this.township = township;
+        this.city = city;
+        this.contactNumber = contactNumber;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.type = type;
     }
 
@@ -62,5 +66,37 @@ public class EmergencyContact {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTownship() {
+        return township;
+    }
+
+    public void setTownship(String township) {
+        this.township = township;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

@@ -4,15 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
-import android.util.Log;
 
 import com.zawmyohtet.lothone.model.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.concurrent.ExecutionException;
 
 /**
  * @author zawmyohtet
@@ -74,6 +71,7 @@ public class UserStore {
             e.printStackTrace();
         }
 
+        close();
         return id;
     }
 
@@ -82,10 +80,9 @@ public class UserStore {
      * @return Credential
      */
     public User pull() {
+        open();
         User user = new User();
         try {
-            open();
-
             Cursor cursor = database.rawQuery("SELECT * FROM " + DataStore.TB_USER + " LIMIT 1", null);
 
             if (cursor.getCount() > 0) {
@@ -105,9 +102,13 @@ public class UserStore {
                 }
             }
 
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        close();
 
         return user;
     }

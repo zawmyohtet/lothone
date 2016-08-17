@@ -53,13 +53,6 @@
                 android:value=".HomeActivity" />
         </activity>
 
-        <!-- <receiver android:name=".receiver.ScreenOnOffReceiver"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.SCREEN_OFF" /> -->
-        <!-- <action android:name="android.intent.action.SCREEN_ON" /> -->
-        <!-- </intent-filter> -->
-        <!-- </receiver> -->
-
         <service
             android:name=".services.LothoneService"
             android:enabled="true"
