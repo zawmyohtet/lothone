@@ -20,6 +20,7 @@ import com.zawmyohtet.lothone.model.User;
 import com.zawmyohtet.lothone.services.LothoneService;
 import com.zawmyohtet.lothone.utility.Credential;
 import com.zawmyohtet.lothone.utility.Helper;
+import com.zawmyohtet.lothone.utility.ProgressDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -113,9 +114,12 @@ public class HomeFragment extends Fragment {
     private void testConverter() {
         Log.d(TAG, "Hello from test converter");
 
+        ProgressDialog progressDialog = new ProgressDialog();
+
         ContentValues contentValues = null;
         JSONObject jsonObject = new JSONObject();
         try {
+            progressDialog.show(context);
 
             for (int i = 0; i < 100; i++) {
 
@@ -134,10 +138,11 @@ public class HomeFragment extends Fragment {
                 eStore.push(EmergencyContactStore.TYPE_POLICE_STATION, contentValues);
 
             }
-
+            progressDialog.dismiss();
         } catch (JSONException | IllegalAccessException e) {
             e.printStackTrace();
         }
+
     }
 
     public void onButtonPressed(Uri uri) {

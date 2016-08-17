@@ -41,7 +41,7 @@ public class EmergencyContactActivity extends AppCompatActivity implements Emerg
     private Context context;
     private EmergencyContactAdapter emergencyContactAdapter;
     private List<EmergencyContact> emergencyContactList = new ArrayList<>();
-    private String filter = "Police";
+    private int filter = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,27 +52,20 @@ public class EmergencyContactActivity extends AppCompatActivity implements Emerg
         Intent intent = getIntent();
 
         if (intent != null) {
-            filter = intent.getStringExtra(FILTER);
+            filter = intent.getIntExtra(FILTER, 1);
         }
 
         context = this;
         ButterKnife.bind(this);
 
-        emergencyContactAdapter = new EmergencyContactAdapter(emergencyContactList, this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
-        rcvEmergency.setLayoutManager(layoutManager);
-        rcvEmergency.setItemAnimator(new DefaultItemAnimator());
-        rcvEmergency.addItemDecoration(new Divider(this, LinearLayoutManager.VERTICAL));
-        rcvEmergency.setAdapter(emergencyContactAdapter);
-
         new DataLoader().execute();
     }
 
     private List<EmergencyContact> prepareDummy() {
+        EmergencyContactStore eStore = new EmergencyContactStore(context);
+        emergencyContactList = eStore.pull(filter);
 
-        for (int i = 0; i < 200; i++) {
-            emergencyContactList.add(new EmergencyContact(i, getString(R.string.fake_name), getString(R.string.fake_address), "South Okkalapa", "Yangon", getString(R.string.fake_ph_number), "OOO", "0000", getString(R.string.police_station)));
-        }
+        Log.d(TAG, "List size -> " + emergencyContactList.size());
 
         return emergencyContactList;
     }
@@ -97,6 +90,12 @@ public class EmergencyContactActivity extends AppCompatActivity implements Emerg
             super.onPostExecute(aBoolean);
 
             if (aBoolean) {
+                emergencyContactAdapter = new EmergencyContactAdapter(emergencyContactList, EmergencyContactActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+                rcvEmergency.setLayoutManager(layoutManager);
+                rcvEmergency.setItemAnimator(new DefaultItemAnimator());
+                rcvEmergency.addItemDecoration(new Divider(EmergencyContactActivity.this, LinearLayoutManager.VERTICAL));
+                rcvEmergency.setAdapter(emergencyContactAdapter);
                 emergencyContactAdapter.notifyDataSetChanged();
             }
 
