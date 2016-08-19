@@ -43,19 +43,8 @@ public class EmergencyContactStore {
     public long push(int type, ContentValues values) {
 
         long id = -1;
-        String table = DataStore.TB_POLICE_STATION;
 
-        switch (type) {
-            case 1:
-                table = DataStore.TB_POLICE_STATION;
-                break;
-            case 2:
-                table = DataStore.TB_FIRE_STATION;
-                break;
-            case 3:
-                table = DataStore.TB_AMBULANCE;
-                break;
-        }
+        String table = this.getTable(type);
 
         try {
             open();
@@ -75,19 +64,7 @@ public class EmergencyContactStore {
 
         ArrayList<EmergencyContact> emergencyContacts = new ArrayList<>();
 
-        String table = DataStore.TB_POLICE_STATION;
-
-        switch (type) {
-            case 1:
-                table = DataStore.TB_POLICE_STATION;
-                break;
-            case 2:
-                table = DataStore.TB_FIRE_STATION;
-                break;
-            case 3:
-                table = DataStore.TB_AMBULANCE;
-                break;
-        }
+        String table = this.getTable(type);
 
         open();
 
@@ -103,6 +80,8 @@ public class EmergencyContactStore {
                 }
             }
 
+            cursor.close();
+
         } catch (SQLiteException e) {
             e.printStackTrace();
         }
@@ -112,4 +91,21 @@ public class EmergencyContactStore {
         return emergencyContacts;
     }
 
+    private String getTable(int type){
+        String table = DataStore.TB_POLICE_STATION;
+
+        switch (type) {
+            case 1:
+                table = DataStore.TB_POLICE_STATION;
+                break;
+            case 2:
+                table = DataStore.TB_FIRE_STATION;
+                break;
+            case 3:
+                table = DataStore.TB_AMBULANCE;
+                break;
+        }
+
+        return table;
+    }
 }

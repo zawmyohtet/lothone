@@ -102,7 +102,7 @@ public class UserStore {
                 }
             }
 
-
+            cursor.close();
 
         } catch (Exception e) {
             e.printStackTrace();
