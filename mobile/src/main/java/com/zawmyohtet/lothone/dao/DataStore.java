@@ -59,6 +59,28 @@ public class DataStore extends SQLiteOpenHelper {
     public static final String AB_LATITUDE = "latitude";
     public static final String AB_LONGITUDE = "longitude";
 
+    private int id;
+    private String code, township, city, type;
+
+    // Zip
+    public static final String TB_ZIP = "zip";
+    public static final String ZP_ID = "id";
+    public static final String ZP_CODE = "code";
+    public static final String ZP_TOWNSHIP = "township";
+    public static final String ZP_CITY = "city";
+    public static final String ZP_COUNTRY = "country";
+    public static final String ZP_TYPE = "type";
+
+    // Area
+    public static final String TB_AREA = "area";
+    public static final String AR_ID = "id";
+    public static final String AR_CODE = "code";
+    public static final String AR_TOWNSHIP = "township";
+    public static final String AR_CITY = "city";
+    public static final String AR_COUNTRY = "country";
+    public static final String AR_TYPE = "type";
+
+
     public DataStore(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -105,12 +127,31 @@ public class DataStore extends SQLiteOpenHelper {
             AB_LATITUDE + " TEXT NULL, " +
             AB_LONGITUDE + " TEXT NULL);";
 
+
+    private static final String CREATE_ZP_TABLE = "CREATE TABLE " + TB_ZIP + " (" +
+            ZP_ID + " INTEGER PRIMARY KEY, " +
+            ZP_CODE + " TEXT NULL, " +
+            ZP_TOWNSHIP + " TEXT NULL, " +
+            ZP_CITY + " TEXT NULL, " +
+            ZP_COUNTRY + " TEXT NULL, " +
+            ZP_TYPE + " TEXT NULL);";
+
+    private static final String CREATE_AR_TABLE = "CREATE TABLE " + TB_AREA + " (" +
+            AR_ID + " INTEGER PRIMARY KEY, " +
+            AR_CODE + " TEXT NULL, " +
+            AR_TOWNSHIP + " TEXT NULL, " +
+            AR_CITY + " TEXT NULL, " +
+            AR_COUNTRY + " TEXT NULL, " +
+            AR_TYPE + " TEXT NULL);";
+
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(CREATE_USER_TABLE);
         database.execSQL(CREATE_PS_TABLE);
         database.execSQL(CREATE_FR_TABLE);
         database.execSQL(CREATE_AB_TABLE);
+        database.execSQL(CREATE_ZP_TABLE);
+        database.execSQL(CREATE_AR_TABLE);
     }
 
     @Override
