@@ -7,6 +7,6 @@ package com.zawmyohtet.lothone.action;
 
 public interface EmergencyContactListInterface {
 
-    public void onCall(String number);
+    void onCall(String number);
 
 }

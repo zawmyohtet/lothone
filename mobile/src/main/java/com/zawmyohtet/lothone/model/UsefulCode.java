@@ -10,6 +10,19 @@ public class UsefulCode {
     private int id;
     private String code, township, city, country, type;
 
+    public UsefulCode(){
+
+    }
+
+    public UsefulCode(int id, String code, String township, String city, String country, String type){
+        this.id = id;
+        this.code = code;
+        this.township = township;
+        this.city = city;
+        this.country = country;
+        this.type = type;
+    }
+
     public int getId() {
         return id;
     }

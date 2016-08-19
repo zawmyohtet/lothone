@@ -165,10 +165,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
             Log.d(TAG, "Hello I am doing in background!");
             Credential.getInstance(context).reset();
             UserStore userStore = new UserStore(context);
-            if (userStore.push(user) != -1) {
-                return true;
-            }
-            return false;
+            return userStore.push(user) != -1;
         }
 
         @Override

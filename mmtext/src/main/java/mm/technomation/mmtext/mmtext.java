@@ -179,15 +179,11 @@ public class mmtext {
     }
 
     private static boolean charIsEnter(char c) {
-        if (c == '\n') {
-            return true;
-        }
-        return false;
+        return c == '\n';
     }
 
     private static boolean charIsBreak(char c) {
-        if (c == 0x200b || c == ' ' || c == '\t') return true;
-        return false;
+        return c == 0x200b || c == ' ' || c == '\t';
     }
 
     public static String processText(String original_text, int EncodedText, boolean SamsungSafe,
@@ -413,11 +409,7 @@ public class mmtext {
             char c = str.charAt(i);
             if (c >= 0x1000 && c <= 0x1021) {
                 state = 0;
-                if (c != 'န') {
-                    move = false;
-                } else {
-                    move = true;
-                }
+                move = c == 'န';
             }
             if (isContain(ukm, c)) move = true;
             if (c == '့') {

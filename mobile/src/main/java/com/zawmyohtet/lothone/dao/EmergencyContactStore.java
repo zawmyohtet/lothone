@@ -70,7 +70,7 @@ public class EmergencyContactStore {
 
         try {
 
-            Cursor cursor = database.rawQuery("SELECT * FROM " + DataStore.TB_POLICE_STATION, null);
+            Cursor cursor = database.rawQuery("SELECT * FROM " + table, null);
 
             if (cursor.getCount() > 0) {
                 if (cursor.moveToFirst()) {
